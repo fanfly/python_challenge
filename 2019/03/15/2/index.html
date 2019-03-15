@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/python_challenge/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/python_challenge/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/python_challenge/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/python_challenge/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/python_challenge/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/python_challenge/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/python_challenge/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="故事海盜們在海上四處掠奪，也需要承擔相當大的風險。因此，許多海盜們為了保障安全及獲得穩定的收入，便組成公會來壯大勢力。其中，在眾公會中首屈一指的，便是閃靈公會了。 想加入閃靈公會，必須先繳納巨額的入會費，並且還要依據每年的收入繳納稅金，才能保留會員的資格。相對地，身為公會中的一員，也就擁有相當高的福利，不僅船隻的修繕免費，連糧食的補給也不必勞心勞力，自會有人安排。因此，對許多海盜而言，能加入閃靈公">
+<meta property="og:type" content="article">
+<meta property="og:title" content="試煉 2：閃靈公會">
+<meta property="og:url" content="http://yoursite.com/python_challenge/2019/03/15/2/index.html">
+<meta property="og:site_name" content="Python Challenge">
+<meta property="og:description" content="故事海盜們在海上四處掠奪，也需要承擔相當大的風險。因此，許多海盜們為了保障安全及獲得穩定的收入，便組成公會來壯大勢力。其中，在眾公會中首屈一指的，便是閃靈公會了。 想加入閃靈公會，必須先繳納巨額的入會費，並且還要依據每年的收入繳納稅金，才能保留會員的資格。相對地，身為公會中的一員，也就擁有相當高的福利，不僅船隻的修繕免費，連糧食的補給也不必勞心勞力，自會有人安排。因此，對許多海盜而言，能加入閃靈公">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-03-15T07:33:56.543Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="試煉 2：閃靈公會">
+<meta name="twitter:description" content="故事海盜們在海上四處掠奪，也需要承擔相當大的風險。因此，許多海盜們為了保障安全及獲得穩定的收入，便組成公會來壯大勢力。其中，在眾公會中首屈一指的，便是閃靈公會了。 想加入閃靈公會，必須先繳納巨額的入會費，並且還要依據每年的收入繳納稅金，才能保留會員的資格。相對地，身為公會中的一員，也就擁有相當高的福利，不僅船隻的修繕免費，連糧食的補給也不必勞心勞力，自會有人安排。因此，對許多海盜而言，能加入閃靈公">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/python_challenge/2019/03/15/2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>試煉 2：閃靈公會 | Python Challenge</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/python_challenge/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Challenge</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/python_challenge/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/python_challenge/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python_challenge/python_challenge/2019/03/15/2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FanFly">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/python_challenge/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Challenge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">試煉 2：閃靈公會
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-03-15 15:33:15 / 修改時間：15:33:56" itemprop="dateCreated datePublished" datetime="2019-03-15T15:33:15+08:00">2019-03-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="故事"><a href="#故事" class="headerlink" title="故事"></a>故事</h2><p>海盜們在海上四處掠奪，也需要承擔相當大的風險。<br>因此，許多海盜們為了保障安全及獲得穩定的收入，便組成公會來壯大勢力。<br>其中，在眾公會中首屈一指的，便是<strong>閃靈公會</strong>了。</p>
+<p>想加入閃靈公會，必須先繳納巨額的入會費，並且還要依據每年的收入繳納稅金，才能保留會員的資格。<br>相對地，身為公會中的一員，也就擁有相當高的福利，不僅船隻的修繕免費，連糧食的補給也不必勞心勞力，自會有人安排。<br>因此，對許多海盜而言，能加入閃靈公會是一種至高無上的榮耀。</p>
+<p>要維持如此高水準的福利政策，高額的稅金不可或缺。<br>因此，閃靈公會採取累進稅率的繳納政策，讓當年度高收入的海盜成員負擔鉅額的稅收，並減輕低收入成員的負擔，以穩定公會的財政。</p>
+<p>閃靈公會的繳稅規定如下（每枚金幣等同於 $100$ 克碎銀的價值）：</p>
+<ul>
+<li>年所得在 $10^3$ 枚金幣以下者，每枚金幣需繳交 $7$ 克碎銀。</li>
+<li>年所得在 $10^3$ 枚至 $10^4$ 枚金幣的部分，每枚金幣需繳交 $13$ 克碎銀。</li>
+<li>年所得在 $10^4$ 枚至 $10^6$ 枚金幣的部分，每枚金幣需繳交 $19$ 克碎銀。</li>
+<li>年所得在 $10^6$ 枚以上的部分，每枚金幣需繳交 $29$ 克的碎銀。</li>
+</ul>
+<p>在已知海盜年收入的前提下，請幫他算出該年度的應繳稅額。</p>
+<h2 id="關卡"><a href="#關卡" class="headerlink" title="關卡"></a>關卡</h2><h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>每個關卡內容為一正整數 $n$，表示海盜一年所掠奪的金幣總數。</p>
+<p>若關卡內容為：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2000</span><br></pre></td></tr></table></figure>
+<p>則表示海盜該年度掠奪 $2000$ 枚金幣。</p>
+<p>由於他需要繳交 $1000 \times 5 + (2000 - 1000) \times 12 = 17000$ 克碎銀作為所得稅，因此關卡的答案為：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">17000</span><br></pre></td></tr></table></figure>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ul>
+<li>答案必定是一個不小於 $0$ 的整數。</li>
+</ul>
+<h3 id="關卡-1-1"><a href="#關卡-1-1" class="headerlink" title="關卡 1-1"></a>關卡 1-1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">175</span><br></pre></td></tr></table></figure>
+<h3 id="關卡-1-2"><a href="#關卡-1-2" class="headerlink" title="關卡 1-2"></a>關卡 1-2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="關卡-1-3"><a href="#關卡-1-3" class="headerlink" title="關卡 1-3"></a>關卡 1-3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="關卡-1-4"><a href="#關卡-1-4" class="headerlink" title="關卡 1-4"></a>關卡 1-4</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/python_challenge/2019/03/15/1/" rel="next" title="試煉 1：幽靈金幣">
+                <i class="fa fa-chevron-left"></i> 試煉 1：幽靈金幣
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">FanFly</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/python_challenge/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#故事"><span class="nav-number">1.</span> <span class="nav-text">故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#關卡"><span class="nav-number">2.</span> <span class="nav-text">關卡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#說明"><span class="nav-number">2.1.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事項"><span class="nav-number">2.2.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-1-1"><span class="nav-number">2.3.</span> <span class="nav-text">關卡 1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-1-2"><span class="nav-number">2.4.</span> <span class="nav-text">關卡 1-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-1-3"><span class="nav-number">2.5.</span> <span class="nav-text">關卡 1-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-1-4"><span class="nav-number">2.6.</span> <span class="nav-text">關卡 1-4</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FanFly</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/python_challenge/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/python_challenge/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/python_challenge/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/python_challenge/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/python_challenge/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/python_challenge/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/python_challenge/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/python_challenge/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/python_challenge/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/python_challenge/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
