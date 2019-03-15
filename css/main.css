@@ -1838,7 +1838,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3661ff;
+  background: #44f636;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2138,6 +2138,13 @@ pre .javascript .function {
   top: 50%;
   transform: translate(-50%, -50%);
   color: #ccc;
+}
+.has-jax {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+li {
+  list-style-position: inside !important;
 }
 .page-archive .archive-page-counter {
   position: relative;
