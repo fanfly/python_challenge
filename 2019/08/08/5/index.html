@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/python_challenge/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/python_challenge/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/python_challenge/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/python_challenge/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/python_challenge/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/python_challenge/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/python_challenge/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="今天是閃靈公會進行人口普查的日子。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="試煉 5：人口普查">
+<meta property="og:url" content="http://yoursite.com/python_challenge/2019/08/08/5/index.html">
+<meta property="og:site_name" content="Python Challenge">
+<meta property="og:description" content="今天是閃靈公會進行人口普查的日子。">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-08-08T09:27:59.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="試煉 5：人口普查">
+<meta name="twitter:description" content="今天是閃靈公會進行人口普查的日子。">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/python_challenge/2019/08/08/5/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>試煉 5：人口普查 | Python Challenge</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/python_challenge/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Challenge</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/python_challenge/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/python_challenge/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python_challenge/python_challenge/2019/08/08/5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FanFly">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/python_challenge/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Challenge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">試煉 5：人口普查
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-08-08 16:25:02 / 修改時間：17:27:59" itemprop="dateCreated datePublished" datetime="2019-08-08T16:25:02+08:00">2019-08-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">今天是閃靈公會進行人口普查的日子。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="故事"><a href="#故事" class="headerlink" title="故事"></a>故事</h2><p>今天是閃靈公會進行<strong>人口普查</strong>的日子。</p>
+<p>每一年，閃靈公會都要進行人口普查，讓各船隊清點自己隊上的船員，了解他們的生理與身心狀況。<br>這件事勞心勞力，尤其對於大型船隊來說，光是讓全員集合可能就要花上數個小時，再加上清點、調查等程序可能就要花上一整天的時間。<br>要不是每一年只進行一次，不然許多船隊可能早已經造反了。</p>
+<p>然而，人口普查也是讓閃靈公會得以存續的一個重要的因素。<br>因為能精準掌握各船隊的基本狀況，才能在公會政策有所不足時即時發現問題，並找出解決方案。<br>也正因如此，閃靈公會才能在波濤洶湧的時局之中屹立不搖。</p>
+<hr>
+<p>為了統計數據，在人口普查之後各船隊都需要向公會遞交報告書。<br>在報告書中，需要記錄各項統計數據，而對於一位船員而言，體重是相當重要的一項衡量指標。</p>
+<p>由於中位數不受離群值影響的特性，長老們決定由中位數體重來作為衡量一個船隊的標準。</p>
+<p>如果已知船隊中船員的體重，你能幫忙求出其中的中位數嗎？</p>
+<h2 id="關卡"><a href="#關卡" class="headerlink" title="關卡"></a>關卡</h2><h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>每個關卡內容共有兩行。</p>
+<ul>
+<li>第一行會有一個正整數 $n$，表示船隊的船員總數。</li>
+<li>第二行會有 $n$ 個正整數 $w_1, w_2, \dots, w_{n-1}, w_n$，分別表示船隊中 $n$ 名船員的體重。</li>
+</ul>
+<p>若關卡內容為：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">62 53 93 47</span><br></pre></td></tr></table></figure></p>
+<p>則表示船隊中共有 $4$ 名船員，體重數值分別為 $62$、$53$、$93$、$47$。</p>
+<p>在這個例子中，中位數應為 $(53 + 62) / 2 = 57.5$，故關卡的答案為：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">57.5</span><br></pre></td></tr></table></figure></p>
+<p>為了統一輸出格式，請將答案以一位小數表示。例如如果答案是 <code>10</code>，則請以 <code>10.0</code> 表示。</p>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ul>
+<li>答案必定是一個不小於 $1.0$ 的一位小數。</li>
+<li>請由各關卡所附的連結下載關卡內容。以上範例的關卡內容請見 <a href="/python_challenge/testdata/5-0.dat">5-0.dat</a>。</li>
+</ul>
+<h3 id="關卡-5-1"><a href="#關卡-5-1" class="headerlink" title="關卡 5-1"></a>關卡 5-1</h3><p>請見 <a href="/python_challenge/testdata/5-1.dat">5-1.dat</a>。</p>
+<h3 id="關卡-5-2"><a href="#關卡-5-2" class="headerlink" title="關卡 5-2"></a>關卡 5-2</h3><p>請見 <a href="/python_challenge/testdata/5-2.dat">5-2.dat</a>。</p>
+<h3 id="關卡-5-3"><a href="#關卡-5-3" class="headerlink" title="關卡 5-3"></a>關卡 5-3</h3><p>請見 <a href="/python_challenge/testdata/5-3.dat">5-3.dat</a>。</p>
+<h3 id="關卡-5-4"><a href="#關卡-5-4" class="headerlink" title="關卡 5-4"></a>關卡 5-4</h3><p>請見 <a href="/python_challenge/testdata/5-4.dat">5-4.dat</a>。</p>
+<h2 id="試煉入口"><a href="#試煉入口" class="headerlink" title="試煉入口"></a>試煉入口</h2><p>請點選<a href="https://forms.gle/g2cCs3Vp3LmJM8nL8" target="_blank" rel="noopener">此處</a>以參與試煉。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/python_challenge/2019/07/31/4/" rel="next" title="試煉 4：白金獎章">
+                <i class="fa fa-chevron-left"></i> 試煉 4：白金獎章
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">FanFly</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/python_challenge/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#故事"><span class="nav-number">1.</span> <span class="nav-text">故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#關卡"><span class="nav-number">2.</span> <span class="nav-text">關卡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#說明"><span class="nav-number">2.1.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事項"><span class="nav-number">2.2.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-5-1"><span class="nav-number">2.3.</span> <span class="nav-text">關卡 5-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-5-2"><span class="nav-number">2.4.</span> <span class="nav-text">關卡 5-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-5-3"><span class="nav-number">2.5.</span> <span class="nav-text">關卡 5-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關卡-5-4"><span class="nav-number">2.6.</span> <span class="nav-text">關卡 5-4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#試煉入口"><span class="nav-number">3.</span> <span class="nav-text">試煉入口</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FanFly</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/python_challenge/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/python_challenge/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/python_challenge/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/python_challenge/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/python_challenge/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/python_challenge/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/python_challenge/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/python_challenge/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/python_challenge/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/python_challenge/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
