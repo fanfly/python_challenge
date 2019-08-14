@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Python Challenge">
 <meta property="og:description" content="今天是閃靈公會進行人口普查的日子。">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-08-08T09:27:59.513Z">
+<meta property="og:updated_time" content="2019-08-14T09:44:38.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="試煉 5：人口普查">
 <meta name="twitter:description" content="今天是閃靈公會進行人口普查的日子。">
@@ -331,12 +331,24 @@
                 
               
 
-              <time title="創建時間：2019-08-08 16:25:02 / 修改時間：17:27:59" itemprop="dateCreated datePublished" datetime="2019-08-08T16:25:02+08:00">2019-08-08</time>
+              <time title="創建時間：2019-08-08 16:25:02" itemprop="dateCreated datePublished" datetime="2019-08-08T16:25:02+08:00">2019-08-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-08-14 17:44:38" itemprop="dateModified" datetime="2019-08-14T17:44:38+08:00">2019-08-14</time>
               
             
           </span>
@@ -379,18 +391,21 @@
 <p>為了統計數據，在人口普查之後各船隊都需要向公會遞交報告書。<br>在報告書中，需要記錄各項統計數據，而對於一位船員而言，體重是相當重要的一項衡量指標。</p>
 <p>由於中位數不受離群值影響的特性，長老們決定由中位數體重來作為衡量一個船隊的標準。</p>
 <p>如果已知船隊中船員的體重，你能幫忙求出其中的中位數嗎？</p>
-<h2 id="關卡"><a href="#關卡" class="headerlink" title="關卡"></a>關卡</h2><h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>每個關卡內容共有兩行。</p>
+<h2 id="關卡"><a href="#關卡" class="headerlink" title="關卡"></a>關卡</h2><h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>每個關卡會是一個檔案，內容共有兩行。</p>
 <ul>
 <li>第一行會有一個正整數 $n$，表示船隊的船員總數。</li>
 <li>第二行會有 $n$ 個正整數 $w_1, w_2, \dots, w_{n-1}, w_n$，分別表示船隊中 $n$ 名船員的體重。</li>
 </ul>
-<p>若關卡內容為：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">62 53 93 47</span><br></pre></td></tr></table></figure></p>
-<p>則表示船隊中共有 $4$ 名船員，體重數值分別為 $62$、$53$、$93$、$47$。</p>
-<p>在這個例子中，中位數應為 $(53 + 62) / 2 = 57.5$，故關卡的答案為：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">57.5</span><br></pre></td></tr></table></figure></p>
+<p>若關卡檔案為 <a href="/python_challenge/testdata/5-0.dat">5-0.dat</a>，則打開檔案會發現內容是：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4</span><br><span class="line">62 53 93 47</span><br></pre></td></tr></table></figure></p>
+<p>意思是船隊中共有 $4$ 名船員，體重數值分別為 $62$、$53$、$93$、$47$。</p>
+<p>在這個例子中，中位數應為 $(53 + 62) / 2 = 57.5$，故關卡的答案為：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">57.5</span><br></pre></td></tr></table></figure></p>
 <p>為了統一輸出格式，請將答案以一位小數表示。例如如果答案是 <code>10</code>，則請以 <code>10.0</code> 表示。</p>
 <h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ul>
 <li>答案必定是一個不小於 $1.0$ 的一位小數。</li>
-<li>請由各關卡所附的連結下載關卡內容。以上範例的關卡內容請見 <a href="/python_challenge/testdata/5-0.dat">5-0.dat</a>。</li>
+<li>請由各關卡所附的連結下載關卡內容。由於某些檔案較大，使用類似記事本的程式開啟可能會有一些問題。<ul>
+<li>如果你是使用命令列介面執行 Python 程式，可以使用類似 <code>python3 program.py &lt; 5-x.dat</code> 的指令來將關卡內容的檔案作為程式的輸入。這樣的技術被稱為輸入 / 輸出重導向 (I/O redirection)。</li>
+</ul>
+</li>
 </ul>
 <h3 id="關卡-5-1"><a href="#關卡-5-1" class="headerlink" title="關卡 5-1"></a>關卡 5-1</h3><p>請見 <a href="/python_challenge/testdata/5-1.dat">5-1.dat</a>。</p>
 <h3 id="關卡-5-2"><a href="#關卡-5-2" class="headerlink" title="關卡 5-2"></a>關卡 5-2</h3><p>請見 <a href="/python_challenge/testdata/5-2.dat">5-2.dat</a>。</p>
